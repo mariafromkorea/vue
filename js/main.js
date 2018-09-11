@@ -3,12 +3,12 @@ var app = new Vue({
   data: {
     product: "Contacts",
     showDetails: false,
-    name:" ",
-    email:" ",
-    phone:" ",
-    company:" ",
-    title: " ",
-    notes:" ",
+    name:null,
+    email:null,
+    phone:null,
+    company:null,
+    title: null,
+    notes:null,
     contacts: [
       {
         contactID:01,
@@ -47,7 +47,7 @@ var app = new Vue({
       this.showDetails = false
     }
   },
-  computed {
+  computed: {
     
   }
 })
