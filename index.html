@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head></head>
+    <body>
+      <header></header>
+      <div id="app">
+        <h2>{{ product }}</h2>
+
+        <ul>
+          <li v-for="contact in contacts" :key="contact.contactID">
+            <h3>{{ contact.contactName }}</h3>
+            <div> <b>{{ contact.contactCompany }}</b> | <i>{{ contact.contactTitle }}</i></div>
+
+            <div>
+              <button @click="updateDetails(
+              contact.contactName,
+              contact.contactEmail,
+              contact.contactPhone,
+              contact.contactCompany,
+              contact.contactNotes,
+              contact.contactTitle
+              )">Details</button>
+            </div>
+          </li>
+        </ul>
+        <div v-if="showDetails" id="details">
+          <button @click="hideDetails">X</button>
+          <h2>{{ name }}</h2>
+          <div class="company"><b>Company: </b>{{ company }}</div>
+          <div class="title"><b>Title: </b>{{ title }}</div>
+          <div class="details">{{ phone }} | {{ email }}</div>
+          <div class="notes">{{ notes }}</div>
+        </div>
+      </div>
+
+    </body>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="js/main.js"></script>
+</html>
