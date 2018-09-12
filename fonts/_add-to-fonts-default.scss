@@ -1,0 +1,73 @@
+//Regular Weight Visby // 300
+@font-face {
+  font-family: 'visby';
+  src: url('../fonts/visby/VisbyCF-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/visby/VisbyCF-Regular.otf')  format('opentype'),
+  url('../fonts/visby/VisbyCF-Regular.woff') format('woff'),
+  url('../fonts/visby/VisbyCF-Regular.ttf')  format('truetype'),
+  url('../fonts/visby/VisbyCF-Regular.svg#VisbyCF-Regular') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'visby';
+  src: url('../fonts/visby/VisbyCF-RegularOblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/visby/VisbyCF-RegularOblique.otf')  format('opentype'),
+  url('../fonts/visby/VisbyCF-RegularOblique.woff') format('woff'),
+  url('../fonts/visby/VisbyCF-RegularOblique.ttf')  format('truetype'),
+  url('../fonts/visby/VisbyCF-RegularOblique.svg#VisbyCF-RegularOblique') format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
+
+//Demi-Bold Weight Visby // 600
+@font-face {
+  font-family: 'visby';
+  src: url('../fonts/visby/VisbyCF-DemiBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/visby/VisbyCF-DemiBold.otf')  format('opentype'),
+  url('../fonts/visby/VisbyCF-DemiBold.woff') format('woff'),
+  url('../fonts/visby/VisbyCF-DemiBold.ttf')  format('truetype'),
+  url('../fonts/visby/VisbyCF-DemiBold.svg#VisbyCF-DemiBold') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'visby';
+  src: url('../fonts/visby/VisbyCF-DemiBoldOblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/visby/VisbyCF-DemiBoldOblique.otf')  format('opentype'),
+  url('../fonts/visby/VisbyCF-DemiBoldOblique.woff') format('woff'),
+  url('../fonts/visby/VisbyCF-DemiBoldOblique.ttf')  format('truetype'),
+  url('../fonts/visby/VisbyCF-DemiBoldOblique.svg#VisbyCF-DemiBoldOblique') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+
+//Bold Font Weight Visby // 700
+@font-face {
+  font-family: 'visby';
+  src: url('../fonts/visby/VisbyCF-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/visby/VisbyCF-Bold.otf')  format('opentype'),
+  url('../fonts/visby/VisbyCF-Bold.woff') format('woff'),
+  url('../fonts/visby/VisbyCF-Bold.ttf')  format('truetype'),
+  url('../fonts/visby/VisbyCF-Bold.svg#VisbyCF-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'visby';
+  src: url('../fonts/visby/VisbyCF-BoldOblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/visby/VisbyCF-BoldOblique.otf')  format('opentype'),
+  url('../fonts/visby/VisbyCF-BoldOblique.woff') format('woff'),
+  url('../fonts/visby/VisbyCF-BoldOblique.ttf')  format('truetype'),
+  url('../fonts/visby/VisbyCF-BoldOblique.svg#VisbyCF-BoldOblique') format('svg');
+  font-weight: 700;
+  font-style: italic;
+}
+
+// Global google font setup.
+// See line 23 of template.tpl.php to set Google font
+$head-gf: 'visby', sans-serif;
+$body-gf: 'visby', sans-serif;
