@@ -1,13 +1,37 @@
 header {
-  height:50px;
-  background:linear-gradient(95deg, p(grad-blue-a), p(grad-blue-b));
-  text-align:center;
-  color:p(white);
-  line-height:50px;
-  text-transform:uppercase;
-  font-size:20px;
-  letter-spacing:.15em;
-  font-weight:300;
+  height: 50px;
+  background: linear-gradient(95deg, p(grad-blue-a) 10%, p(grad-blue-b));
+  text-align: right;
+  color: p(white);
+  line-height: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: .15em;
+  font-weight: 300;
+  padding-right: 30px;
+
+  a {
+    display:block;
+    position:absolute;
+    left:0px;
+    top:0px;
+    border-right:solid 1px p(gray);
+    font-size:16px;
+    text-transform:none;
+    letter-spacing:.05em;
+    color:p(white);
+    text-decoration:none;
+    padding-left:40px;
+    background:p(cobalt) url("../images/icon-link.svg") 15px center no-repeat;
+    background-size:auto 20px;
+    padding-right:20px;
+    transition:background-color .2s ease-in-out;
+
+    &:hover,
+    &:active {
+      background-color:p(orange);
+    }
+  }
 }
 .title-bar {
   text-align:center;

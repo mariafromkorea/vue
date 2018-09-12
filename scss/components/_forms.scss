@@ -4,3 +4,216 @@ body {
     box-shadow: 0px 3px 6px rgba(p(black), .16);
   }
 }
+
+button.edit {
+  box-shadow:none;
+  padding:0;
+  float:left;
+
+  i {
+    display:block;
+    width:34px;
+    height:34px;
+    padding-top:7px;
+    padding-left:2px;
+    border-radius:300px;
+    box-shadow:0px 3px 6px rgba(p(black), 0);
+    transition:all .25s ease-in-out;
+
+    svg {
+      max-width:19px;
+
+      .st0{
+        transition:all .25s ease-in-out;
+        fill:p(cobalt);
+      }
+    }
+  }
+
+  &:hover,
+  &:active {
+    i {
+      background-color:p(orange);
+      box-shadow:0px 3px 6px rgba(p(black), .16);
+
+      .st0{
+        fill:p(white);
+      }
+    }
+  }
+}
+button.delete {
+  box-shadow:none;
+  padding:0;
+  float:left;
+
+  i {
+    display:block;
+    width:34px;
+    height:34px;
+    box-shadow:0px 3px 6px rgba(p(black), 0);
+    transition:all .25s ease-in-out;
+    border-radius:300px;
+    padding-top:6px;
+
+    svg {
+      max-width:18px;
+
+      .st0{
+        transition:all .25s ease-in-out;
+        fill:p(cobalt);
+        transition:all .25s ease-in-out;
+      }
+    }
+  }
+
+  &:hover,
+  &:active {
+    i {
+      background-color:p(cobalt);
+      box-shadow:0px 3px 6px rgba(p(black), .16);
+
+      .st0 {
+        fill:p(white);
+      }
+    }
+  }
+}
+
+.title-bar {
+  button {
+    position:absolute;
+    left:100%;
+    width:40px;
+    height:40px;
+    border-radius:300px;
+    background:p(teal);
+    overflow:hidden;
+    transition:all .25s ease-in-out;
+    padding:0;
+    float:left;
+    margin-left:15px;
+    margin-top:19px;
+    z-index:zi(add-button);
+
+    i {
+      display:inline-block;
+      width:40px;
+      height:40px;
+      float:left;
+      background:url("../images/icon-x-white.svg") center no-repeat;
+      background-size:auto 20px;
+      transition:transform .15s ease-in-out;
+    }
+
+    span {
+      float:left;
+      font-size:20px;
+      font-weight:300;
+      color:p(white);
+      line-height:38px;
+      letter-spacing:.05em;
+    }
+
+    &:hover,
+    &:active {
+      width:190px;
+      cursor:pointer;
+      @include btn-bg(blue);
+    }
+  }
+
+  &.addcontact {
+    button {
+      @include btn-bg(orange);
+      width:127px;
+
+      i{
+        transform:rotate(45deg);
+      }
+    }
+  }
+}
+.panel.add-contact {
+  display:block;
+  padding-left:20px;
+  padding-right:20px;
+
+  h4 {
+    font-size:20px;
+    font-weight:300;
+    color:p(mdgray);
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:.075em;
+    margin-top:5px;
+  }
+}
+
+input[type="text"],
+input[type="email"]{
+  -webkit-appearance:none;
+  display:block;
+  border-bottom:solid 1px p(mdgray);
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  width:100%;
+  margin-bottom:15px;
+  height:38px;
+
+  @include placeholder {
+    color:p(ltgray);
+    font-weight:300;
+    font-size:16px;
+  }
+}
+
+textarea {
+  width:100%;
+  border:none;
+  background:p(gray);
+  margin-top:15px;
+  padding:10px 20px;
+  min-height:100px;
+
+  @include placeholder {
+    color:p(ltgray);
+    font-weight:300;
+    font-size:16px;
+    font-style:italic;
+  }
+}
+
+input[type="submit"] {
+  -webkit-appearance:none;
+  display:block;
+  height:40px;
+  width:auto;
+  padding:0 25px;
+  color:p(white);
+  @include btn-bg(blue);
+  border:none;
+  border-radius:20px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 38px;
+  letter-spacing: .05em;
+  margin:15px auto;
+  box-shadow:0px 3px 6px rgba(p(black), .16);
+
+  &:hover,
+  &:active {
+    cursor:pointer;
+  }
+
+  @include placeholder {
+    color:p(white);
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 38px;
+    letter-spacing: .05em;
+  }
+}

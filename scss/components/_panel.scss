@@ -1,4 +1,13 @@
-
+.panel {
+  > h2 {
+    font-size:18px;
+    text-transform:uppercase;
+    color:p(mdgray);
+    letter-spacing:.15em;
+    text-align:center;
+    font-weight:300;
+  }
+}
 button.close {
  display:block;
   width:34px;

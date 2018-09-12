@@ -9,13 +9,78 @@
   transition:all .25s ease-in-out;
   right:-100%;
   background:p(white);
-  padding-top:120px;
+  padding:50px 20px 20px;
   position:relative;
+
+  .actions {
+    position:absolute;
+    top:10px;
+    left:10px;
+  }
+  .addcontact &,
   .active & {
     right:0px;
-    width:30%;
+    width:34%;
+  }
+
+  .summary {
+    color:p(mdgray);
+    font-weight:300;
+    padding: 10px 0px 5px;
+    border-bottom: solid 1px;
+    margin-bottom:15px;
+    font-size:18px;
+
+    b {
+      font-weight:700;
+    }
+    i {
+      font-weight:400;
+    }
+  }
+
+  .phone,
+  .email {
+    color:p(mdgray);
+    font-weight:300;
+    font-size:16px;
+    padding-top:3px;
+    letter-spacing:.075em;
+
+    i {
+      display:inline-block;
+      width:17px;
+      height:21px;
+      margin-right:5px;
+      float:left;
+      margin-top:1px;
+    }
+  }
+
+  .notes {
+    font-size:14px;
+    line-height:1.5;
+    letter-spacing:.05em;
+    font-weight:300;
+    color:p(mdgray);
+
+    h6 {
+      font-weight:300;
+      font-style:italic;
+      font-size:16px;
+      color:p(mdgray);
+      margin-bottom:10px;
+    }
+  }
+  .phone i {
+    background:url("../images/icon-phone.svg") left center no-repeat;
+  }
+
+  .email i {
+    background:url("../images/icon-mail.svg") left center no-repeat;
   }
 }
+
 ul.contact-list {
   padding-top:120px;
   margin:0 auto;
@@ -24,12 +89,23 @@ ul.contact-list {
   padding-left:0;
   flex: 1 1 60%;
   transition:width .25s ease-in-out;
+  padding-left:15px;
+  padding-right:15px;
 
   li {
     background:p(white);
     box-shadow:0px 2px 4px rgba(p(black), .16);
     padding:15px 25px;
     margin-bottom:25px;
+    position:relative;
+    transition:all .15s ease-in-out;
+    border:solid 1px p(white);
+
+    &:hover,
+    &:active {
+      box-shadow:none;
+      border-color:p(cobalt);
+    }
 
     h3 {
       margin:0 auto 5px;
@@ -44,6 +120,7 @@ ul.contact-list {
         &:hover,
         &:active {
           text-decoration:none;
+          cursor:pointer;
         }
       }
     }
@@ -55,5 +132,28 @@ ul.contact-list {
         letter-spacing:.04em;
       }
     }
+    .actions {
+      position:absolute;
+      width:68px;
+      height:34px;
+      margin:auto;
+      top:0;
+      bottom:0;
+      right:15px;
+      left:auto;
+      display:none;
+      opacity:0;
+      transition:opacity .15s ease-in-out;
+      transition-delay:.1s;
+    }
+    &:hover,
+    &:active {
+      .actions {
+        display:block;
+        opacity:1.0;
+      }
+    }
+
+
   }
 }
