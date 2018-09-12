@@ -1,30 +1,28 @@
 Vue.component('product', {
   template:`
-  <div class="contacts">
-<ul>
+  <div class="contacts" v-bind:class="{ active: showDetails }">
+      <ul class="contact-list">
           <li v-for="contact in contacts" :key="contact.contactID">
-            <h3>{{ contact.contactName }}</h3>
-            <div> <b>{{ contact.contactCompany }}</b> | <i>{{ contact.contactTitle }}</i></div>
-
-            <div>
-              <button @click="updateDetails(
+            <h3><a @click="updateDetails(
               contact.contactName,
               contact.contactEmail,
               contact.contactPhone,
               contact.contactCompany,
               contact.contactNotes,
               contact.contactTitle
-              )">Details</button>
-            </div>
+              );">{{ contact.contactName }}</a></h3>
+            <div class="teaser"> <b>{{ contact.contactCompany }}</b> | <i>{{ contact.contactTitle }}</i></div>
           </li>
         </ul>
-        <div v-if="showDetails" id="details">
-          <button @click="hideDetails">X</button>
-          <h2>{{ name }}</h2>
-          <div class="company"><b>Company: </b>{{ company }}</div>
-          <div class="title"><b>Title: </b>{{ title }}</div>
-          <div class="details">{{ phone }} | {{ email }}</div>
-          <div class="notes">{{ notes }}</div>
+        <div id="details">
+          <div class="panel" v-if="showDetails">
+            <button @click="hideDetails" class="close"></button>
+            <h2>{{ name }}</h2>
+            <div class="company"><b>Company: </b>{{ company }}</div>
+            <div class="title"><b>Title: </b>{{ title }}</div>
+            <div class="details">{{ phone }} | {{ email }}</div>
+            <div class="notes">{{ notes }}</div>
+          </div>
         </div>
   </div>
   `,
@@ -60,9 +58,6 @@ Vue.component('product', {
     }
   },
   methods: {
-    addContact: function() {
-
-    },
     updateDetails: function(contactName, contactEmail, contactPhone, contactCompany, contactTitle, contactNotes) {
       this.showDetails = true
       this.email = contactEmail,
@@ -74,12 +69,38 @@ Vue.component('product', {
     },
     hideDetails: function () {
       this.showDetails = false
+    },
+    onSubmit() {
+      this.push(contacts)
     }
   },
   computed: {
 
-  }
+  },
 })
+
+Vue.component('addcontact', {
+  template: `
+            <form id="addcontact" @submit.prevent="onSubmit">
+          <input type="text" v-model="name"  placeholder="name">
+          <input type="submit" value="submit">
+        </form>
+    `,
+  data() {
+    return{
+      name:null
+    }
+  },
+  methods: {
+    onSubmit() {
+      let newContact =  {
+        name: this.name
+      }
+      this.$emit('contact-added', newContact)
+      this.name = null
+    }
+  }
+});
 
 var app = new Vue({
   el: '#app',
