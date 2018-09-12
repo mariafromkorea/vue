@@ -1,0 +1,13 @@
+
+button.close {
+ display:block;
+  width:34px;
+  height:34px;
+  background:url("../images/icon-x-blue.svg") center no-repeat;
+  transform:rotate(45deg);
+  background-size:auto 28px;
+  box-shadow:none;
+  position:absolute;
+  top:5px;
+  right:5px;
+}

@@ -1,0 +1,196 @@
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin grid-row($narrow:false) {
+  max-width: em($row-width);
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+
+  @if $narrow == true {
+    max-width: em($row-width-narrow);
+  }
+}
+
+@mixin grid($col) {
+  $width: percentage($col/$colnum);
+  width: $width;
+  float: left;
+  position: relative;
+}
+//================================== End Grid
+
+// Mixin for placeholder styles
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder { /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+//Box Shadow
+@mixin box-shadow($darker:false) {
+  box-shadow: $global-box-shadow;
+
+  @if $darker == true {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .3);
+  }
+}
+
+//Side Padding
+@mixin min($side) {
+  @if $side == 'left' or $side == 'right' {
+    padding-#{$side}: 0px;
+  }
+
+  @if $side == 'both' {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@mixin mq($realm:null, $value1:null, $value2:null) {
+
+  @if $realm == $tny-down
+		or $realm == $sm-down
+		or $realm == $md-down
+		or $realm == $lg-down
+		or $realm == $xl-down {
+
+    @media only screen and (max-width: em($realm)) {
+      @content;
+    }
+  }
+
+  @if $realm == $tny
+		or $realm == $sm
+		or $realm == $md
+		or $realm == $lg
+		or $realm == $xl {
+
+    @media only screen and (min-width: em($realm)) {
+      @content;
+    }
+  }
+
+  @if $realm == range {
+    @media only screen and (min-width: em($value1)) and (max-width: em($value2)) {
+      @content;
+    }
+  }
+
+  @if $realm == min {
+    @media only screen and (min-width: em($value1)) {
+      @content;
+    }
+  }
+
+  @if $realm == max {
+    @media only screen and (max-width: em($value1)) {
+      @content;
+    }
+  }
+}
+
+@mixin ab-pos($top:0, $right:0, $left:0, $bottom:0) {
+  position: absolute;
+  margin: auto;
+  top: $top;
+  right: $right;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+    width: 0;
+    height: 0;
+    background: none;
+  }
+}
+
+@mixin button($color:$theme-color, $type:button, $style:bold) {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: auto;
+  min-height: $form-component-height;
+  background: $color;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: 8px 12px 6px;
+  line-height: 1.1;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0px 1px 3px rgba($black, .15);
+  text-decoration: none;
+  border-radius:0;
+  text-align:center;
+
+  @if $color == $theme-color {
+    color: $white;
+
+    &:hover,
+    &:active {
+      background: $black;
+    }
+  }
+
+  @if $color == $black {
+    &:hover,
+    &:active {
+      background: $theme-color;
+    }
+  }
+  @if $type == link {
+    padding-top:10px;
+  }
+  @if $style == normal {
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:.025em;
+    padding-top:7px;
+
+    @if $type == link {
+      padding-top:11px;
+    }
+  }
+}
+
+@mixin min($side:lr) {
+  @if $side == lr {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @if $side == tb {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @if $side == all {
+    padding: 0;
+  }
+}
+
+@mixin btn-bg($theme) {
+  @if $theme == blue{
+    background:linear-gradient(45deg, p(btn-blue-a), p(btn-blue-b));
+  }
+  @if $theme == orange {
+    background: linear-gradient(45deg, p(btn-orange-a), p(btn-orange-b));
+  }
+}

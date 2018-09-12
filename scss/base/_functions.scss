@@ -1,0 +1,14 @@
+@function p($key) {
+  @if not map-has-key($palette, $key) {
+    @warn "#{$key} was not found in map palette";
+  }
+  @return map-get($palette, $key);
+}
+
+@function zi($key) {
+  @if not map-has-key($zstack, $key) {
+    @warn "#{$key} was not found in the z-index stack";
+  }
+
+  @return map-get($zstack, $key);
+}

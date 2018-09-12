@@ -1,0 +1,60 @@
+body {
+  &, * {
+    font-family:$font;
+  }
+}
+
+h1 {
+  font-size:50px;
+  text-align:center;
+  color:p(teal);
+  font-weight:300;
+  display:inline-block;
+  width:auto;
+  position:relative;
+
+  > span {
+    float:left;
+    display:inline-block;
+    width:auto;
+  }
+  button {
+    position:absolute;
+    left:100%;
+    width:40px;
+    height:40px;
+    border-radius:300px;
+    background:p(teal);
+    overflow:hidden;
+    transition:all .25s ease-in-out;
+    padding:0;
+    float:left;
+    margin-left:15px;
+    margin-top:19px;
+    z-index:zi(add-button);
+    i {
+      display:inline-block;
+      width:40px;
+      height:40px;
+      float:left;
+      background:url("../images/icon-x-white.svg") center no-repeat;
+      background-size:auto 20px;
+    }
+
+    span {
+      float:left;
+      font-size:20px;
+      font-weight:300;
+      color:p(white);
+      line-height:38px;
+      letter-spacing:.05em;
+    }
+
+    &:hover,
+    &:active {
+      width:190px;
+      cursor:pointer;
+      @include btn-bg(blue);
+    }
+  }
+}

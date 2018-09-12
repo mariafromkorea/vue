@@ -1,0 +1,13 @@
+body {
+  margin:0;
+  padding:0;
+  position:relative;
+  line-height:1.45;
+  letter-spacing:.03em;
+  background:p(gray);
+  font-weight:400;
+
+  &, * {
+    box-sizing:border-box;
+  }
+}
